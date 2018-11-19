@@ -1,0 +1,20 @@
+branch-defaults:
+  default:
+    environment: eb-custom-platform-builder-packer
+environment-defaults:
+  eb-custom-platform-builder-packer:
+    branch: null
+    repository: null
+global:
+  application_name: Custom Platform Builder
+  branch: null
+  default_ec2_keyname: null
+  default_platform: null
+  default_region: us-east-1
+  instance_profile: aws-elasticbeanstalk-custom-platform-ec2-role
+  platform_name: Kratos2_Platform
+  platform_version: 1.0.28
+  profile: null
+  repository: null
+  sc: null
+  workspace_type: Platform

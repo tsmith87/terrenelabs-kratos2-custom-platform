@@ -1,0 +1,38 @@
+{
+  "variables": {
+    "platform_name": "{{env `AWS_EB_PLATFORM_NAME`}}",
+    "platform_version": "{{env `AWS_EB_PLATFORM_VERSION`}}",
+    "platform_arn": "{{env `AWS_EB_PLATFORM_ARN`}}"
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "name": "HVM AMI builder",
+      "region": "us-east-1",
+      "source_ami": "ami-0013e4aa03abc21c4",
+      "ami_name": "Kratos2-Ubuntu",
+      "instance_type": "t3.micro",
+      "ssh_username": "ubuntu",
+      "ssh_pty": "true",
+      "tags": {
+        "eb_platform_name": "{{user `platform_name`}}",
+        "eb_platform_version": "{{user `platform_version`}}",
+        "eb_platform_arn": "{{user `platform_arn`}}"
+      }
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "builder",
+      "destination": "/tmp/"
+    },
+    {
+      "type": "shell",
+      "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo {{ .Path }}",
+      "scripts": [
+        "builder/builder.sh"
+      ]
+    }
+  ]
+}
