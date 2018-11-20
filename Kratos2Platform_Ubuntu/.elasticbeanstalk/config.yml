@@ -13,7 +13,7 @@ global:
   default_region: us-east-1
   instance_profile: aws-elasticbeanstalk-custom-platform-ec2-role
   platform_name: Kratos2_Platform
-  platform_version: 1.0.2
+  platform_version: 1.0.5
   profile: null
   repository: null
   sc: null
