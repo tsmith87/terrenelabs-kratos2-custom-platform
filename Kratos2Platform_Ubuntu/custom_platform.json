@@ -9,7 +9,7 @@
       "type": "amazon-ebs",
       "name": "HVM AMI builder",
       "region": "us-east-1",
-      "source_ami": "ami-031580a475f85889b",
+      "source_ami": "ami-09ca75154c71b0aa5",
       "ami_name": "Kratos2-Ubuntu-Platform",
       "instance_type": "t3.micro",
       "ssh_username": "ubuntu",

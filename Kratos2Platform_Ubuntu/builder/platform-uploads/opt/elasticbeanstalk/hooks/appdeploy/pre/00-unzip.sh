@@ -15,10 +15,10 @@ if /opt/elasticbeanstalk/bin/download-source-bundle; then
 	mkdir -p $STAGING_DIR
 	if file --mime-type /opt/elasticbeanstalk/deploy/appsource/source_bundle | grep -q zip$; then
   		unzip -o -d $STAGING_DIR /opt/elasticbeanstalk/deploy/appsource/source_bundle
-  		unzip /var/app/current/Kratos2.jar
-	elif file --mime-type /opt/elasticbeanstalk/deploy/appsource/source_bundle | grep -q java-archive$; then
-  		mv /opt/elasticbeanstalk/deploy/appsource/source_bundle /var/app/current/Kratos2.jar
   		sudo unzip -o /var/app/current/Kratos2.jar
+  		sudo chown -R ubuntu /var/app/current/*
+	elif file --mime-type /opt/elasticbeanstalk/deploy/appsource/source_bundle | grep -q java-archive$; then
+  		unzip -o -d $STAGING_DIR /opt/elasticbeanstalk/deploy/appsource/source_bundle
   		sudo chown -R ubuntu /var/app/current/*
 	fi
 	rm -rf $STAGING_DIR/.ebextensions
