@@ -1,7 +1,7 @@
 Kratos2_CustomPlatform_Ubuntu
 ==========================
 This repository contains the source for an Elastic Beanstalk Custom Platform.
-This custom platform is based on **Ubuntu 18.04** and supports **Python3.6**.
+This custom platform is based on **Ubuntu 18.04** and supports **Java1.8**.
 
 See the Packer template, *custom_platform.json*, for details on the AMI and
 scripts that the builder runs as it creates the custom platform.
