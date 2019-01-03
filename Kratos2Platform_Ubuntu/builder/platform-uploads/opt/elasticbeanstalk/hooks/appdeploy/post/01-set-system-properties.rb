@@ -14,4 +14,4 @@ jvm_parameters = env_vars.inject("") do |str, (key, value)|
 		str << " -D#{key}=\\\"#{value}\\\""
 	end
 end
-`sudo sed -i '/command=*/c\ command=java #{jvm_parameters} org.springframework.boot.loader.JarLauncher' /etc/supervisor/conf.d/kratos2.conf``sudo sed -i '/command=*/c\ command=java #{jvm_parameters} org.springframework.boot.loader.JarLauncher' /etc/supervisor/conf.d/kratos2.conf`
+`sudo sed -i '/command=*/c\ command=java #{jvm_parameters} org.springframework.boot.loader.JarLauncher' /etc/supervisor/conf.d/kratos2.conf`
